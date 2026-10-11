@@ -2,15 +2,20 @@
 
 The task is to build a command-line calculator program which allows users to perform calculations in the terminal. This project is a part of my journey of refreshing my Python fundamentals and imrpoving my problem-solving skills.
 
-### Planned Features
+### Added Features
 
 - Accept numbers from the user
 - Support addition, subtraction, division, and multiplication
 - Allow the user to choose an operation 
+- Allow multiple calculations without restarting the program
+
+
+### ToDo
+
 - Handle invalid input 
 - Prevent division by zero
-- Allow multiple calculations without restarting the program
 - One additional feature of my choice
+
 
 ### Requirements
 
