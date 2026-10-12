@@ -15,6 +15,7 @@ def multiplication(a, b):
     result = a * b
     return result
 
+# Main calculator loop
 def calculator():
     while True:
         operation = input(
@@ -51,15 +52,19 @@ def calculator():
             except ValueError:
                 print("That is not a valid number.")
 
+        # Arithmetic Functions
         if operation == '+':
             result = addition(a, b)
             print(f"{a} + {b} = {result}")
+
         elif operation == '-':
             result = subtraction(a, b)
             print(f"{a} - {b} = {result}")
+
         elif operation == '/':
             result = division(a, b)
             print(f"{a} / {b} = {result}")
+
         elif operation == '*':
             result = multiplication(a, b)
             print(f"{a} * {b} = {result}")

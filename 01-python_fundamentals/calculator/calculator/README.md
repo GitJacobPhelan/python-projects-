@@ -14,8 +14,9 @@ The task is to build a command-line calculator program which allows users to per
 
 ### ToDo
 
-- One additional feature of my choice
-
+- Graphical interface
+- Calculation history
+- Powers, square roots
 
 ### Requirements
 
@@ -27,7 +28,7 @@ The task is to build a command-line calculator program which allows users to per
 2. Open a terminal in the project directory
 3. Run the program using Python
 
-### Concepts to practiseß
+### Concepts to practise
 
 - Variables + data types
 - User input and output
@@ -38,7 +39,7 @@ The task is to build a command-line calculator program which allows users to per
 
 ### Development Status
 
-In development.
+Developed, can be updated in future.
 
 ### Future improvements
 
