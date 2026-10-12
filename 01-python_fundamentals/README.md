@@ -8,12 +8,12 @@ The task is to build a command-line calculator program which allows users to per
 - Support addition, subtraction, division, and multiplication
 - Allow the user to choose an operation 
 - Allow multiple calculations without restarting the program
+- Handle invalid input 
+- Prevent division by zero
 
 
 ### ToDo
 
-- Handle invalid input 
-- Prevent division by zero
 - One additional feature of my choice
 
 

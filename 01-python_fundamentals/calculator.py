@@ -1,19 +1,19 @@
 
 def addition(a, b):
     result = a + b
-    print (f"{a} + {b} = {result}")
+    return result
 
 def subtraction(a, b):
     result = a - b
-    print (f"{a} - {b} = {result}")
+    return result
 
 def division(a, b):
     result = a / b
-    print (f"{a} / {b} = {result}")
+    return result
 
 def multiplication(a, b):
     result = a * b
-    print (f"{a} * {b} = {result}")
+    return result
 
 def calculator():
     while True:
@@ -29,19 +29,40 @@ def calculator():
         if operation == 'q':
             break
 
-        a = int(input('Enter your first number: '))
-        b = int(input('Enter your second number: '))
+        if operation not in ('+','-','/','*'):
+            print("Invalid operation.")
+            continue
+
+        while True:
+            try:
+                a = float(input('Enter your first number: '))
+                break
+
+            except ValueError:
+                print("That is not a valid number.")
+
+        while True:
+            try:
+                b = float(input('Enter your second number: '))
+                if operation == '/' and b == 0:
+                    print("Division by 0 not allowed.")
+                else:
+                    break
+            except ValueError:
+                print("That is not a valid number.")
 
         if operation == '+':
-            addition(a, b)
+            result = addition(a, b)
+            print(f"{a} + {b} = {result}")
         elif operation == '-':
-            subtraction(a, b)
+            result = subtraction(a, b)
+            print(f"{a} - {b} = {result}")
         elif operation == '/':
-            division(a, b)
+            result = division(a, b)
+            print(f"{a} / {b} = {result}")
         elif operation == '*':
-            multiplication(a, b)
-        else:
-            print('Operation not found.')
-            
+            result = multiplication(a, b)
+            print(f"{a} * {b} = {result}")
+
 calculator()
 
