@@ -1,16 +1,19 @@
 import random
-import sys
 
 def play():
     random_num = random.randint(1, 100)
     attempts = 0
 
     while True:
-        guess = int(input("Guess the number between 1 and 100: "))
-
+        while True: 
+            try:
+                guess = int(input("Guess the number between 1 and 100: "))
+                break
+            except ValueError:
+                print("Guess must be a number")
+                
         if guess > 100 or guess < 1:
             print("Number must be between 1 and 100.")
-            continue
 
         elif guess == random_num:
             attempts += 1
@@ -20,17 +23,23 @@ def play():
         elif guess > random_num:
             print("Too high!")
             attempts += 1
-            continue
-        
-        elif guess < random_num:
-            print("Too low")
-            attempts += 1
-            continue
 
-while True:
+        elif guess < random_num:
+            print("Too low!")
+            attempts += 1
+
+playing = True
+
+while playing:
     play()
 
-    play_again = input("Play again? (Y / N) ").strip().lower()
+    while True:
+        play_again = input("Play again? (Y / N) ").strip().lower()
 
-    if play_again != "y":
-        break
+        if play_again == "y":
+            break
+        elif play_again == "n":
+            playing = False
+            break
+        else:
+            print("You must enter Y or N")

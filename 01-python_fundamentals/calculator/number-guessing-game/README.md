@@ -9,9 +9,6 @@ The task is to build a number guessing game which allows the user to repeatedly 
 - Tell them whether the guess it too high or too low
 - Continue until guess is correct
 - Counter for number of attempts
-
-### ToDo
-
 - Input validation
 - Option to play again after winning
 
