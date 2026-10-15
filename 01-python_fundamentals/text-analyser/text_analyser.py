@@ -1,4 +1,7 @@
+"""A program that analyses text entered by the user."""
+
 def text_analyser():
+    """Analyse user-provided text."""
     sentence = input("Enter your sentence: ")
 
     characters = len(sentence)

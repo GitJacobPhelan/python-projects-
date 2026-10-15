@@ -1,22 +1,27 @@
+"""A calculator that performs arithmetic operations."""
 
 def addition(a, b):
+    """Return the sum of two numbers."""
     result = a + b
     return result
 
 def subtraction(a, b):
+    """Return the difference between two numbers."""
     result = a - b
     return result
 
 def division(a, b):
+    """Return the result of dividing two numbers."""
     result = a / b
     return result
 
 def multiplication(a, b):
+    """Return the product of two numbers."""
     result = a * b
     return result
 
-# Main calculator loop
 def calculator():
+    """Run the calculator and allow user input"""
     while True:
         operation = input(
             "Choose an operation:\n" \
@@ -70,4 +75,3 @@ def calculator():
             print(f"{a} * {b} = {result}")
 
 calculator()
-

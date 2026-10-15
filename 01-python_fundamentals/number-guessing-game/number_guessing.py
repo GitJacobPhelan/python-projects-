@@ -1,6 +1,9 @@
+"""A number guessing-game where users guess a randomly generated number."""
+
 import random
 
 def play():
+    """Run a round of the number-guessing game."""
     random_num = random.randint(1, 100)
     attempts = 0
 
@@ -10,8 +13,7 @@ def play():
                 guess = int(input("Guess the number between 1 and 100: "))
                 break
             except ValueError:
-                print("Guess must be a number")
-                
+                print("Guess must be a number")  
         if guess > 100 or guess < 1:
             print("Number must be between 1 and 100.")
 
@@ -19,7 +21,6 @@ def play():
             attempts += 1
             print(f"Correct! You took {attempts} attempts!")
             return
-            
         elif guess > random_num:
             print("Too high!")
             attempts += 1
