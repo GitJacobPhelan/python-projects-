@@ -4,13 +4,13 @@ This task is to build a text analyser which allows the user to enter a sentence 
 
 ### Added Features
 
-### ToDo
-
 - Ask the user to enter some text
 - Count the total number of characters
 - Count the number of words
 - Count the number of sentences
 - Display the results
+
+### ToDo
 
 - Count how often each word appears
 - Identify the most frequently occurring word 

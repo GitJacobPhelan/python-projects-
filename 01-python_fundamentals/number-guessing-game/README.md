@@ -33,7 +33,7 @@ Python3
 
 ### Development Status 
 
-In development
+Developed, can be updated in future
 
 ### Author
 
