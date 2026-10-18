@@ -9,12 +9,11 @@ This task is to build a text analyser which allows the user to enter a sentence 
 - Count the number of words
 - Count the number of sentences
 - Display the results
-
-### ToDo
-
 - Count how often each word appears
 - Identify the most frequently occurring word 
 - Ignore differences between uppercase and lowercase words
+
+### ToDo
 
 - Handle empty inputs
 - Exclude punctuation from word count

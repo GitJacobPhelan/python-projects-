@@ -13,4 +13,20 @@ def text_analyser():
     sentence_count = sentence.count(".") + sentence.count("!") + sentence.count("?")
     print(f"Sentence Count: {sentence_count}")
 
+    words = sentence.lower().split()
+    word_frequencies = {}
+
+    for word in words:
+        if word in word_frequencies:
+            word_frequencies[word] += 1
+        else:
+            word_frequencies[word] = 1
+
+    most_common_word = max(word_frequencies, key=word_frequencies.get)
+
+    print(f"Most common word: {most_common_word}")
+    print(f"Occurences: {word_frequencies[most_common_word]}")
+
+
+
 text_analyser()
