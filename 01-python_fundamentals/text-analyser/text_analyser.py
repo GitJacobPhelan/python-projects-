@@ -2,7 +2,14 @@
 
 def text_analyser():
     """Analyse user-provided text."""
-    sentence = input("Enter your sentence: ")
+    while True:
+        sentence = input("Enter your sentence: ")
+
+        if not sentence.strip():
+            print("No text provided.")
+        else:
+            break
+
 
     characters = len(sentence)
     print(f"Characters: {characters}")
