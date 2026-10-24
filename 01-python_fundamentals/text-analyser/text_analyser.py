@@ -14,9 +14,6 @@ def text_analyser():
     characters = len(sentence)
     print(f"Characters: {characters}")
 
-    word_count = len(sentence.split())
-    print(f"Word Count: {word_count}")
-
     sentence_count = sentence.count(".") + sentence.count("!") + sentence.count("?")
     print(f"Sentence Count: {sentence_count}")
 
@@ -24,12 +21,18 @@ def text_analyser():
     word_frequencies = {}
 
     for word in words:
-        if word in word_frequencies:
-            word_frequencies[word] += 1
+        clean_word = word.strip(".,!?;:\"'()[]{}")
+        if clean_word == '':
+            continue
+        if clean_word in word_frequencies:
+            word_frequencies[clean_word] += 1
         else:
-            word_frequencies[word] = 1
+            word_frequencies[clean_word] = 1
 
     most_common_word = max(word_frequencies, key=word_frequencies.get)
+
+    word_count = sum(word_frequencies.values())
+    print(f"Word Count: {word_count}")
 
     print(f"Most common word: {most_common_word}")
     print(f"Occurences: {word_frequencies[most_common_word]}")
