@@ -30,11 +30,22 @@ def text_analyser():
             word_frequencies[clean_word] = 1
 
     most_common_word = max(word_frequencies, key=word_frequencies.get)
+    print(f"Most common word: {most_common_word}")
+
+    top_five_words = sorted (
+        word_frequencies.items(),
+        key=lambda item: item[1],
+        reverse=True
+    ) [:5]
+
+    print("Top five most common words:")
+
+    for word, frequency in top_five_words:
+        print(f"{word}: {frequency}")
 
     word_count = sum(word_frequencies.values())
     print(f"Word Count: {word_count}")
 
-    print(f"Most common word: {most_common_word}")
     print(f"Occurences: {word_frequencies[most_common_word]}")
 
 

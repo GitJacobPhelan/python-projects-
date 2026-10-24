@@ -14,10 +14,10 @@ This task is to build a text analyser which allows the user to enter a sentence 
 - Ignore differences between uppercase and lowercase words
 - Handle empty inputs
 - Exclude punctuation from word count
+- Display the five most common words
 
 ### ToDo
 
-- Display the five most common words
 - Clear, organised output
 
 ### Requirements
