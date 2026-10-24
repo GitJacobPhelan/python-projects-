@@ -10,13 +10,9 @@ def text_analyser():
         else:
             break
 
-
     characters = len(sentence)
-    print(f"Characters: {characters}")
 
     sentence_count = sentence.count(".") + sentence.count("!") + sentence.count("?")
-    print(f"Sentence Count: {sentence_count}")
-
     words = sentence.lower().split()
     word_frequencies = {}
 
@@ -29,25 +25,28 @@ def text_analyser():
         else:
             word_frequencies[clean_word] = 1
 
-    most_common_word = max(word_frequencies, key=word_frequencies.get)
-    print(f"Most common word: {most_common_word}")
+    word_count = sum(word_frequencies.values())
 
-    top_five_words = sorted (
+    print("\n========== TEXT ANALYSIS ==========")
+    print(f"Characters: {characters}")
+    print(f"Words: {word_count}")
+    print(f"Sentences: {sentence_count}")
+
+    most_common_word = max(word_frequencies, key=word_frequencies.get)
+    
+    print("\n========== MOST COMMON WORD ==========")
+    print(f"Most common word: {most_common_word}")
+    print(f"Occurences: {word_frequencies[most_common_word]}")
+
+    top_five_words = sorted(
         word_frequencies.items(),
         key=lambda item: item[1],
         reverse=True
     ) [:5]
 
-    print("Top five most common words:")
+    print("\n========== TOP FIVE WORDS ==========")
 
     for word, frequency in top_five_words:
-        print(f"{word}: {frequency}")
-
-    word_count = sum(word_frequencies.values())
-    print(f"Word Count: {word_count}")
-
-    print(f"Occurences: {word_frequencies[most_common_word]}")
-
-
+        print(f"{word:<20} {frequency}")
 
 text_analyser()
