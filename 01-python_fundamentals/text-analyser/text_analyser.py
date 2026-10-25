@@ -32,8 +32,10 @@ def text_analyser():
     print(f"Words: {word_count}")
     print(f"Sentences: {sentence_count}")
 
+    if not word_frequencies:
+        print("No words to analyze.")
+        return
     most_common_word = max(word_frequencies, key=word_frequencies.get)
-    
     print("\n========== MOST COMMON WORD ==========")
     print(f"Most common word: {most_common_word}")
     print(f"Occurences: {word_frequencies[most_common_word]}")
