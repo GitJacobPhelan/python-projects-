@@ -1,6 +1,27 @@
+
 """A program that analyses text entered by the user."""
 
 import re
+
+
+def get_word_frequencies(text):
+    """Return a dictionary of words and their frequencies."""
+    words = text.lower().split()
+    word_frequencies = {}
+
+    for word in words:
+        clean_word = word.strip(".,!?;:\"'()[]{}")
+
+        if not clean_word:
+            continue
+
+        if clean_word in word_frequencies:
+            word_frequencies[clean_word] += 1
+        else:
+            word_frequencies[clean_word] = 1
+
+    return word_frequencies
+
 
 def text_analyser():
     """Analyse user-provided text."""
@@ -14,25 +35,14 @@ def text_analyser():
 
     characters = len(sentence)
 
-    sentence_endings = re.findall(r'[.!?]+', sentence)
+    sentence_endings = re.findall(r"[.!?]+", sentence)
 
     if sentence_endings:
         sentence_count = len(sentence_endings)
     else:
         sentence_count = 1
 
-    words = sentence.lower().split()
-    word_frequencies = {}
-
-    for word in words:
-        clean_word = word.strip(".,!?;:\"'()[]{}")
-        if clean_word == '':
-            continue
-        if clean_word in word_frequencies:
-            word_frequencies[clean_word] += 1
-        else:
-            word_frequencies[clean_word] = 1
-
+    word_frequencies = get_word_frequencies(sentence)
     word_count = sum(word_frequencies.values())
 
     print("\n========== TEXT ANALYSIS ==========")
@@ -41,22 +51,29 @@ def text_analyser():
     print(f"Sentences: {sentence_count}")
 
     if not word_frequencies:
-        print("No words to analyze.")
+        print("No words to analyse.")
         return
-    most_common_word = max(word_frequencies, key=word_frequencies.get)
+
+    most_common_word = max(
+        word_frequencies,
+        key=word_frequencies.get
+    )
+
     print("\n========== MOST COMMON WORD ==========")
     print(f"Most common word: {most_common_word}")
-    print(f"Occurences: {word_frequencies[most_common_word]}")
+    print(f"Occurrences: {word_frequencies[most_common_word]}")
 
     top_five_words = sorted(
         word_frequencies.items(),
         key=lambda item: item[1],
         reverse=True
-    ) [:5]
+    )[:5]
 
     print("\n========== TOP FIVE WORDS ==========")
 
     for word, frequency in top_five_words:
         print(f"{word:<20} {frequency}")
 
-text_analyser()
+
+if __name__ == "__main__":
+    text_analyser()
