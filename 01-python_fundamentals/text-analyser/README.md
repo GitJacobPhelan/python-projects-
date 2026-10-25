@@ -15,9 +15,7 @@ This task is to build a text analyser which allows the user to enter a sentence 
 - Handle empty inputs
 - Exclude punctuation from word count
 - Display the five most common words
-- Clear, organised output
-
-### ToDo
+- Clear, organised output      
 
 ### Requirements
 
@@ -28,6 +26,12 @@ This task is to build a text analyser which allows the user to enter a sentence 
 1. Clone this repository or download project files
 2. Open a terminal in the project directory
 3. Run the program using Python
+
+### How to run Unit Tests
+
+Run this command:
+
+python3 -m unittest -v
 
 ### Concepts to Pracise
 
