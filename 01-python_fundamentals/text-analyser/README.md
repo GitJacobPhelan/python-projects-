@@ -15,10 +15,9 @@ This task is to build a text analyser which allows the user to enter a sentence 
 - Handle empty inputs
 - Exclude punctuation from word count
 - Display the five most common words
+- Clear, organised output
 
 ### ToDo
-
-- Clear, organised output
 
 ### Requirements
 

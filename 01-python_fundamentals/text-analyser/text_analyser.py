@@ -1,5 +1,7 @@
 """A program that analyses text entered by the user."""
 
+import re
+
 def text_analyser():
     """Analyse user-provided text."""
     while True:
@@ -12,7 +14,13 @@ def text_analyser():
 
     characters = len(sentence)
 
-    sentence_count = sentence.count(".") + sentence.count("!") + sentence.count("?")
+    sentence_endings = re.findall(r'[.!?]+', sentence)
+
+    if sentence_endings:
+        sentence_count = len(sentence_endings)
+    else:
+        sentence_count = 1
+
     words = sentence.lower().split()
     word_frequencies = {}
 
